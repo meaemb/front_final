@@ -1,160 +1,97 @@
-// --- Footer year ---
-document.getElementById("year").textContent = new Date().getFullYear();
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffafc;
+  margin: 0;
+  padding-top: 70px;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-$(document).ready(function () {
+.text-gradient {
+  background: linear-gradient(90deg, #b43b3b, #800020);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
-  // Smooth scroll to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 200) $("#toTop").fadeIn();
-    else $("#toTop").fadeOut();
-  });
-  $("#toTop").click(() => $("html, body").animate({ scrollTop: 0 }, 600));
+.navbar-brand { color: #800020 !important; }
+.nav-link:hover { color: #b43b3b !important; }
 
-  // --- GALLERY MODAL ---
-  $(".gallery-img").click(function () {
-    $("#modalImage").attr("src", $(this).attr("src"));
-    $("#imgModal").modal("show");
-  });
+/* ---------- HERO SECTION ---------- */
+.hero {
+  position: relative;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("https://i.pinimg.com/1200x/04/c4/88/04c488167cf9c90abec28f9a5a9f07a5.jpg")
+    center center / cover no-repeat;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
 
-  // --- CONTACT FORM VALIDATION ---
-  $("#contactForm").on("submit", function (e) {
-    e.preventDefault();
-    let name = $("#name").val().trim();
-    let email = $("#email").val().trim();
-    let message = $("#message").val().trim();
+/* ---------- Cards & Buttons ---------- */
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.btn-dark {
+  background-color: #800020;
+  border: none;
+}
+.btn-dark:hover {
+  background-color: #b43b3b;
+}
 
-    if (name && email && message) {
-      $("#formAlert").html("<div class='alert alert-success'>Message sent successfully!</div>");
-      $(this).trigger("reset");
-    } else {
-      $("#formAlert").html("<div class='alert alert-danger'>Please fill in all fields.</div>");
-    }
-  });
+/* ---------- Gallery ---------- */
+.gallery-img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+}
 
-  // --- CART FUNCTIONALITY ---
-  const cartKey = "cartItems";
+/* ---------- Footer ---------- */
+.footer-wide {
+  text-align: center;
+  background: #800020;
+  color: white;
+  padding: 15px 0;
+  margin-top: auto;
+}
 
-  // Add to cart
-  $(".order-btn").click(function () {
-    const card = $(this).closest(".card");
-    const title = card.find("h5").text().trim();
-    const priceText = card.find(".fw-bold").text().replace(/[^\d]/g, "");
-    const price = parseInt(priceText);
+/* ---------- Scroll Button ---------- */
+#toTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  border-radius: 50%;
+}
 
-    if (isNaN(price)) {
-      alert("Error: Price not found.");
-      return;
-    }
-
-    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
-    cart.push({ title, price });
-    localStorage.setItem(cartKey, JSON.stringify(cart));
-    alert(`${title} added to cart!`);
-  });
-
-  // Display cart items
-  if ($("#cartItems").length) {
-    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
-    const container = $("#cartItems");
-    const emptyMsg = $("#emptyCart");
-    const totalSection = $("#totalSection");
-    const totalAmount = $("#totalAmount");
-
-    if (cart.length === 0) {
-      emptyMsg.show();
-      totalSection.hide();
-    } else {
-      emptyMsg.hide();
-      totalSection.show();
-      cart.forEach((item, index) => {
-        container.append(`
-          <div class="col-md-4 mb-3">
-            <div class="card p-3 border-0 shadow-sm text-start">
-              <div class="d-flex align-items-center">
-                <input type="checkbox" class="form-check-input me-2 select-item" data-index="${index}" data-price="${item.price}">
-                <h5 class="mb-0">${item.title}</h5>
-              </div>
-              <p class="mt-2 mb-1">${item.price.toLocaleString()} ₸</p>
-              <button class="btn btn-outline-danger remove-item" data-index="${index}">Remove</button>
-            </div>
-          </div>
-        `);
-      });
-    }
-
-    // Update total dynamically
-    function updateTotal() {
-      let total = 0;
-      $(".select-item:checked").each(function () {
-        total += parseInt($(this).data("price"));
-      });
-      totalAmount.text(total.toLocaleString() + " ₸");
-    }
-
-    $(document).on("change", ".select-item", updateTotal);
-
-    // Remove item
-    $(document).on("click", ".remove-item", function () {
-      const index = $(this).data("index");
-      let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
-      cart.splice(index, 1);
-      localStorage.setItem(cartKey, JSON.stringify(cart));
-      location.reload();
+// --- Fetch dynamic reviews ---
+if ($("#dailyQuote").length) {
+  fetch("data/reviews.json")
+    .then(res => res.json())
+    .then(data => {
+      const random = data[Math.floor(Math.random() * data.length)];
+      $("#dailyQuote").html(`"${random.review}"<br><em>— ${random.author}</em>`);
+    })
+    .catch(() => {
+      $("#dailyQuote").text("Could not load review. Please try again later.");
     });
-
-    // Clear all
-    $("#clearCart").click(function () {
-      localStorage.removeItem(cartKey);
-      location.reload();
-    });
-
-    // Payment modal
-    $("#placeOrder").click(function () {
-      const selected = $(".select-item:checked");
-      if (selected.length === 0) {
-        alert("Please select at least one item!");
-        return;
-      }
-
-      let total = 0;
-      selected.each(function () {
-        total += parseInt($(this).data("price"));
-      });
-
-      $("#modalTotal").text(total.toLocaleString() + " ₸");
-      $("#paymentModal").modal("show");
-    });
-
-    // Payment validation
-    $("#paymentForm").on("submit", function (e) {
-      e.preventDefault();
-      const name = $("#cardName").val().trim();
-      const number = $("#cardNumber").val().trim();
-      const expiry = $("#cardExpiry").val().trim();
-      const cvv = $("#cardCVV").val().trim();
-
-      if (!name || number.length !== 16 || !expiry || cvv.length !== 3) {
-        alert("Please fill out all fields correctly!");
-        return;
-      }
-
-      $("#paymentModal").modal("hide");
-      alert("Payment successful! Thank you!");
-      localStorage.removeItem(cartKey);
-      location.reload();
-    });
-  }
-
-  // --- FETCH: Dynamic Quote (API) ---
-  if ($("#dailyQuote").length) {
-    fetch("https://api.quotable.io/random")
-      .then(res => res.json())
-      .then(data => {
-        $("#dailyQuote").text(`"${data.content}" — ${data.author}`);
-      })
-      .catch(() => {
-        $("#dailyQuote").text("Could not load quote. Please try again later.");
-      });
-  }
-
-});
+}
