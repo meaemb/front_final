@@ -83,15 +83,3 @@ body {
   border-radius: 50%;
 }
 
-// --- Fetch dynamic reviews ---
-if ($("#dailyQuote").length) {
-  fetch("data/reviews.json")
-    .then(res => res.json())
-    .then(data => {
-      const random = data[Math.floor(Math.random() * data.length)];
-      $("#dailyQuote").html(`"${random.review}"<br><em>— ${random.author}</em>`);
-    })
-    .catch(() => {
-      $("#dailyQuote").text("Could not load review. Please try again later.");
-    });
-}
