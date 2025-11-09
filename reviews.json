@@ -1,22 +1,7 @@
 [
-  {
-    "author": "Aigerim & Aidos",
-    "review": "Elegant design and fast delivery — our guests loved every detail!"
-  },
-  {
-    "author": "Timur & Alina",
-    "review": "The minimal style matched our wedding perfectly. Highly recommend!"
-  },
-  {
-    "author": "Dana & Arman",
-    "review": "The floral watercolor invitations looked absolutely dreamy!"
-  },
-  {
-    "author": "Malika & Dauren",
-    "review": "Professional, creative, and friendly service. We loved the result!"
-  },
-  {
-    "author": "Asel & Yerassyl",
-    "review": "Baqyt Shaqyrtu helped make our special day even more beautiful."
-  }
+  { "text": "Elegant design and fast delivery — our guests loved every detail!", "author": "Aigerim & Aidos" },
+  { "text": "The invitations matched our wedding theme perfectly!", "author": "Timur & Alina" },
+  { "text": "Beautifully crafted — simple, stylish, and heartfelt.", "author": "Arman & Dana" },
+  { "text": "Amazing quality and service. Everything arrived beautifully packed.", "author": "Nurzhan & Aliya" },
+  { "text": "They turned our story into art — truly unforgettable.", "author": "Dias & Zhanel" }
 ]
