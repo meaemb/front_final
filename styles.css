@@ -1,0 +1,97 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffafc;
+  margin: 0;
+  padding-top: 70px;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #b43b3b, #800020);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navbar-brand { color: #800020 !important; }
+.nav-link:hover { color: #b43b3b !important; }
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  position: relative;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("https://i.pinimg.com/1200x/04/c4/88/04c488167cf9c90abec28f9a5a9f07a5.jpg")
+    center center / cover no-repeat;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+/* ---------- Cards & Buttons ---------- */
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.btn-dark {
+  background-color: #800020;
+  border: none;
+}
+.btn-dark:hover {
+  background-color: #b43b3b;
+}
+
+/* ---------- Gallery ---------- */
+.gallery-img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Footer ---------- */
+.footer-wide {
+  text-align: center;
+  background: #800020;
+  color: white;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+/* ---------- Scroll Button ---------- */
+#toTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  border-radius: 50%;
+}
+
+// --- Fetch dynamic reviews ---
+if ($("#dailyQuote").length) {
+  fetch("data/reviews.json")
+    .then(res => res.json())
+    .then(data => {
+      const random = data[Math.floor(Math.random() * data.length)];
+      $("#dailyQuote").html(`"${random.review}"<br><em>— ${random.author}</em>`);
+    })
+    .catch(() => {
+      $("#dailyQuote").text("Could not load review. Please try again later.");
+    });
+}

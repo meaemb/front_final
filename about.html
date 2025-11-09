@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Baqyt Shaqyrtu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark fs-3" href="index.html">♡ Baqyt Shaqyrtu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container my-5 pt-5">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h2 class="text-gradient fw-bold mb-3">About Our Studio</h2>
+        <p>Baqyt Shaqyrtu started as a small project with a simple idea — to make wedding invitations that truly reflect each couple’s story. We noticed that most ready-made invitations looked too similar, so we wanted to create something more personal and meaningful.</p>
+        <p>Every invitation we make carries warmth and sincerity. We help couples express themselves through design, texture, and color. For us, an invitation is not just a card — it’s the first impression of your celebration.</p>
+        <p>We work with different materials and styles — from classic gold foil to watercolor florals. Whether you prefer luxury or minimalism, we can make it reflect your story beautifully.</p>
+
+        <h4 class="text-gradient mt-4">Our Values</h4>
+        <p>We believe in love, art, and attention to detail. Our studio stands for quality, trust, and creativity. We aim to deliver not only a design but emotions that last.</p>
+
+        <h4 class="text-gradient mt-4">Our Team</h4>
+        <p>Our team includes passionate designers, calligraphers, and print experts who work together to create truly special invitations for your wedding day.</p>
+      </div>
+
+      <div class="col-md-5">
+        <div class="bg-light p-4 rounded shadow-sm">
+          <h4 class="text-gradient mb-3">Why Choose Us</h4>
+          <ul>
+            <li>Personal approach to every order</li>
+            <li>Unique and handmade designs</li>
+            <li>High-quality papers and printing</li>
+            <li>Free small edits (names & dates)</li>
+            <li>Fast delivery and friendly support</li>
+          </ul>
+        </div>
+
+        <!-- Dynamic Reviews Section -->
+        <div class="bg-white p-4 rounded shadow-sm mt-4">
+          <h5 class="text-gradient mb-3">What Couples Say</h5>
+          <p id="dailyQuote" class="fst-italic text-muted">Loading review...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-wide">© <span id="year"></span> Baqyt Shaqyrtu</footer>
+  <button id="toTop" class="btn btn-dark">↑</button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

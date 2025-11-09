@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery - Baqyt Shaqyrtu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark fs-3" href="index.html">♡ Baqyt Shaqyrtu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li class="nav-item"><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="container my-5 pt-5 text-center">
+    <h2 class="text-gradient mb-4 fw-bold">Gallery</h2>
+    <div class="row g-3">
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/13/ee/4c/13ee4cb12545cba7e0b8e7216359bd19.jpg" class="gallery-img" alt="Invitation 1"></div>
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/1e/85/45/1e8545bbb73e186db499a33d85de0436.jpg" class="gallery-img" alt="Invitation 2"></div>
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/9c/b4/6c/9cb46c2fd0ef7d6ce4436700bf4b20fc.jpg" class="gallery-img" alt="Invitation 3"></div>
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/fe/27/2e/fe272e9bc586dad9e3322f2292f4983f.jpg" class="gallery-img" alt="Invitation 4"></div>
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/2e/aa/1b/2eaa1b50b3d4fad67b1a2ada7520d5a2.jpg" class="gallery-img" alt="Invitation 5"></div>
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/97/3f/5b/973f5b8e524fde78196a6a417a4f464e.jpg" class="gallery-img" alt="Invitation 6"></div>
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/ac/8b/14/ac8b14b1cae317ad101568fd56c215d6.jpg" class="gallery-img" alt="Invitation 7"></div>
+      <div class="col-md-3 col-6"><img src="https://i.pinimg.com/736x/2f/94/a8/2f94a8c506aa08d40219e9a239b8502d.jpg" class="gallery-img" alt="Invitation 8"></div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="imgModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered"><img class="modal-content" id="modalImage" alt=""></div>
+  </div>
+
+  <footer class="footer-wide">© <span id="year"></span> Baqyt Shaqyrtu</footer>
+  <button id="toTop" class="btn btn-dark">↑</button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catalog – Baqyt Shaqyrtu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark fs-3" href="index.html">♡ Baqyt Shaqyrtu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="catalog.html" class="nav-link active">Catalog</a></li>
+          <li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container my-5 pt-5">
+    <h2 class="text-center mb-4 text-gradient">Catalog</h2>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <img src="https://i.pinimg.com/736x/13/ee/4c/13ee4cb12545cba7e0b8e7216359bd19.jpg" class="card-img-top" alt="Classic Gold">
+          <div class="card-body text-center">
+            <h5>Classic Gold</h5>
+            <p>Elegant gold details and serif typography.</p>
+            <p class="fw-bold">10000 ₸</p>
+            <button class="btn btn-dark order-btn">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <img src="https://i.pinimg.com/736x/1e/85/45/1e8545bbb73e186db499a33d85de0436.jpg" class="card-img-top" alt="Modern Minimal">
+          <div class="card-body text-center">
+            <h5>Modern Minimal</h5>
+            <p>Clean lines and a calm color palette.</p>
+            <p class="fw-bold">9000 ₸</p>
+            <button class="btn btn-dark order-btn">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <img src="https://i.pinimg.com/736x/9c/b4/6c/9cb46c2fd0ef7d6ce4436700bf4b20fc.jpg" class="card-img-top" alt="Rustic Floral">
+          <div class="card-body text-center">
+            <h5>Rustic Floral</h5>
+            <p>Soft florals with rustic textures.</p>
+            <p class="fw-bold">10500 ₸</p>
+            <button class="btn btn-dark order-btn">Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <img src="https://i.pinimg.com/736x/fe/27/2e/fe272e9bc586dad9e3322f2292f4983f.jpg" class="card-img-top" alt="Royal Monogram">
+          <div class="card-body text-center">
+            <h5>Royal Monogram</h5>
+            <p>Luxurious embossed logo and foil printing.</p>
+            <p class="fw-bold">15000 ₸</p>
+            <button class="btn btn-dark order-btn">Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-wide">© <span id="year"></span> Baqyt Shaqyrtu</footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
